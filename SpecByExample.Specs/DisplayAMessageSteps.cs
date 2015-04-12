@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TechTalk.SpecFlow;
 
@@ -25,17 +26,7 @@ namespace SpecByExample.Specs
 		[Then(@"(.*) will be visible")]
 		public void ThenWillBeVisible(string theMessage)
 		{
-			//
-			ScenarioContext.Current.Pending();
 			Assert.IsTrue(htmlSource.Contains(theMessage), "The message should have been visible");
-		}
-	}
-
-	public static class HtmlScraper
-	{
-		public static string GetHtml(string httpLocalhost)
-		{
-			return ""; //"Hello World";
 		}
 	}
 }

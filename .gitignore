@@ -3,10 +3,13 @@
 !packages/repositories.config
 
 #bins
-#/SpecByExample/bin/
-#/SpecByExample/obj/Debug/
-#/SpecByExample.Specs/bin/
+/SpecByExample.Web/bin/
+/SpecByExample.Web/obj/
+/SpecByExample.Specs/bin/
+/SpecByExample.Specs/obj/
 */bin/
+
+
 # from: http://stackoverflow.com/questions/639647/git-and-asp-mvc
 ###################
 # compiled source #
