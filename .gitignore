@@ -3,12 +3,10 @@
 !packages/repositories.config
 
 #bins
-/SpecByExample/bin/
-/SpecByExample.Specs/bin/
-
-#test
-/TestResults/
-
+#/SpecByExample/bin/
+#/SpecByExample/obj/Debug/
+#/SpecByExample.Specs/bin/
+*/bin/
 # from: http://stackoverflow.com/questions/639647/git-and-asp-mvc
 ###################
 # compiled source #
@@ -21,9 +19,6 @@
 *.dll.config
 *.cache
 *.suo
-# Include dlls if they’re in the NuGet packages directory
-!/packages/*/lib/*.dll
-!/packages/*/lib/*/*.dll
 # Include dlls if they're in the CommonReferences directory
 !*CommonReferences/*.dll
 ####################
