@@ -1,13 +1,29 @@
 ﻿using System;
 using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SpecResults;
+using SpecResults.WebApp;
 using TechTalk.SpecFlow;
 
 namespace SpecByExample.Specs
 {
 	[Binding]
-	public class DisplayAMessageSteps
+	public class DisplayAMessageSteps : ReportingStepDefinitions
 	{
+		[BeforeTestRun]
+		public static void BeforeTestRun()
+		{
+			Reporters.Add(new WebAppReporter());
+
+			Reporters.FinishedReport += (sender, args) =>
+			{
+				var reporter = args.Reporter as WebAppReporter;
+				if (reporter != null)
+				{
+					reporter.WriteToFolder(@"C:\temp", true);
+				}
+			};
+		}
 		private string htmlSource;
 
 		[Given(@"the website loads")]
